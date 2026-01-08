@@ -1,0 +1,75 @@
+# Cyrus Docker - Files to exclude from Docker build context
+
+# Node modules (will be installed in container)
+node_modules
+**/node_modules
+
+# Build artifacts (will be built in container)
+dist
+**/dist
+*.tsbuildinfo
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Development files
+*.log
+*.swp
+*.swo
+*~
+
+# Test files
+coverage
+.nyc_output
+**/*.test.ts
+**/*.test.js
+**/*.spec.ts
+**/*.spec.js
+
+# Documentation (not needed in runtime)
+*.md
+!README.md
+docs
+test-drives
+
+# IDE and editor files
+.vscode
+.idea
+*.sublime-*
+.DS_Store
+
+# CI/CD
+.github
+.gitlab-ci.yml
+.travis.yml
+
+# Package manager
+.pnpm-debug.log
+pnpm-debug.log*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local development
+.cache
+tmp
+temp
+*.tmp
+
+# Cyrus local data (will be in Docker volume)
+.cyrus
+repos
+worktrees
+
+# Electron app (not needed for server deployment)
+apps/electron
+
+# F1 testing framework (not needed in production)
+apps/f1
